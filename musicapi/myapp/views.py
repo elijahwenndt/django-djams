@@ -30,4 +30,9 @@ class GenreViewSet(ModelViewSet):
 class SongViewSet(ModelViewSet):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
-    http_method_names = ['get', 'post']  
+    http_method_names = ['get', 'post']
+
+ 
+        
+
+      

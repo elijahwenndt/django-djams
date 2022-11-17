@@ -31,4 +31,8 @@ class SongSerializer(serializers.ModelSerializer):
         model = Song
         fields = ['title', 'duration', 'genre', 'album', 'artist', 'plays', 'explicit', 'playlist']
 
+    def create(self, validated_data):
+        album = validated_data.pop('artist')[0]
+        artist = validated_data.pop('artist')[0]
         
+
