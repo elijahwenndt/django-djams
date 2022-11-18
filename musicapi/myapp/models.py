@@ -31,7 +31,7 @@ class Genre(models.Model):
 class Song(models.Model):
     title = models.CharField(max_length=500)
     duration = models.DecimalField(max_digits=4, decimal_places=2)
-    genre = models.ForeignKey(Genre, on_delete=models.PROTECT)
+    genre = models.ForeignKey(Genre, on_delete=models.PROTECT, default=3)
     album = models.ManyToManyField(Album)
     artist = models.ManyToManyField(Artist)
     plays = models.IntegerField(default=0)
@@ -40,3 +40,16 @@ class Song(models.Model):
 
     def __str__(self):
         return self.title 
+
+# class ReadSong(model.Model):
+#     title = models.CharField(max_length=500)
+#     duration = models.DecimalField(max_digits=4, decimal_places=2)
+#     genre = models.ForeignKey(Genre, on_delete=models.PROTECT, default=3)
+#     album = models.ManyToManyField(Album)
+#     artist = models.ManyToManyField(Artist)
+#     plays = models.IntegerField(default=0)
+#     explicit = models.BooleanField(default=False)
+#     playlist = models.ManyToManyField(Playlist)
+
+#     def __str__(self):
+#         return self.title 
